@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável — Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="intro-screen" class="active">
+        <div class="hero">
+            <div class="hero-content">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663672891005/H3dG3e5ZV4JoCbs97VjUqP/agro-icon-ipCzw2VTPSg8sgT6gmvyHV.webp" alt="Logo" class="hero-logo">
+                <h1>
+                    <span class="gold">Agro Forte,</span><br>
+                    <span class="white">Futuro Sustentável</span>
+                </h1>
+                <p class="subtitle">Equilíbrio entre produção e meio ambiente</p>
+                <p class="description">Teste seus conhecimentos sobre agricultura sustentável com 10 perguntas desafiadoras.</p>
+
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-icon">🎯</span>
+                        <span>10 Questões</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🌿</span>
+                        <span>6 Categorias</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🏆</span>
+                        <span>4 Níveis</span>
+                    </div>
+                </div>
+
+                <button class="btn-start" onclick="startQuiz()">Iniciar o Quiz</button>
+                <p class="hint-text">Dica: use as teclas 1–4 para responder e Enter para avançar</p>
+            </div>
+        </div>
+
+        <div class="info-strip">
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>Sistemas Integrados</h3>
+                    <p>ILPF, Plantio Direto e Rotação de Culturas</p>
+                </div>
+                <div class="info-item">
+                    <h3>Tecnologia e Inovação</h3>
+                    <p>Agricultura de Precisão e Biodefensivos</p>
+                </div>
+                <div class="info-item">
+                    <h3>Legislação e Clima</h3>
+                    <p>Código Florestal, APPs e Emissões de GEE</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="playing-screen">
+        <div class="header">
+            <div class="header-left">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663672891005/H3dG3e5ZV4JoCbs97VjUqP/agro-icon-ipCzw2VTPSg8sgT6gmvyHV.webp" alt="Logo" class="header-logo">
+                <span class="header-title">Agro Quiz</span>
+            </div>
+            <div class="progress-wrapper">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+            <div class="score-badge">
+                <span>🏆</span>
+                <span id="score-display">0 pts</span>
+            </div>
+        </div>
+
+        <div class="question-area">
+            <div id="question-container"></div>
+        </div>
+    </div>
+
+    <div id="result-screen">
+        <div class="result-hero">
+            <div class="result-content">
+                <svg class="result-icon" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <h2 class="result-title" id="result-title">Excelente!</h2>
+                <p class="result-message" id="result-message">Você demonstrou conhecimento sobre agricultura sustentável.</p>
+
+                <div class="score-circle" id="score-circle">
+                    <div class="score-circle-inner">
+                        <div class="score-number" id="final-score">0</div>
+                        <div class="score-total" id="final-total">de 10</div>
+                    </div>
+                </div>
+                <div class="score-percentage" id="score-percentage">0%</div>
+            </div>
+        </div>
+
+        <div class="result-breakdown">
+            <h3 class="breakdown-title">Resumo do Desempenho</h3>
+            <div class="breakdown-list" id="breakdown-list"></div>
+
+            <div class="result-buttons">
+                <button class="btn-restart" onclick="restartQuiz()">
+                    <span>🔄</span>
+                    <span>Jogar Novamente</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
